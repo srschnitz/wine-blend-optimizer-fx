@@ -1,0 +1,28 @@
+# replicate_anova.py (Add to your wine_blending_doe.ipynb)
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+from scipy.stats import f_oneway  # Fallback for simple one-way
+
+# Sample data: Taste scores for Run 1 replicates (replace with yours)
+data = {
+    'Taste_Score': [6.8, 7.1, 6.5],  # Rep1, Rep2, Rep3
+    'Replicate': ['Rep1', 'Rep2', 'Rep3']
+}
+df = pd.DataFrame(data)
+
+# Method 1: statsmodels OLS ANOVA (full table)
+model = ols('Taste_Score ~ C(Replicate)', data=df).fit()
+anova_table = sm.stats.anova_lm(model, typ=2)
+print("ANOVA Table (statsmodels):")
+print(anova_table)
+
+# Method 2: SciPy F-test (simpler, for p-value only)
+f_stat, p_value = f_oneway(df[df['Replicate'] == 'Rep1']['Taste_Score'],
+                           df[df['Replicate'] == 'Rep2']['Taste_Score'],
+                           df[df['Replicate'] == 'Rep3']['Taste_Score'])
+print(f"\nF-stat: {f_stat:.2f}, p-value: {p_value:.3f}")
+if p_value > 0.05:
+    print("Result: Replicates consistent (no sig difference)")
+else:
+    print("Result: Replicates vary—check process")
