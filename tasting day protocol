@@ -4,3 +4,8 @@
 3. **Taste**: 5 tasters, 15 min gaps
 4. **Record**: Score + time
 5. **Reveal**: After all 12
+
+**Adding Time of Day to Anova as well**
+# Add to full_anova_wine.py
+df['Time_of_Day'] = [18.25, 18.50, 18.75, ...]  # From schedule planned, this could change due to time conflicts
+formula += ' + Time_of_Day'
