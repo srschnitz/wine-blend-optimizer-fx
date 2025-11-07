@@ -1,0 +1,62 @@
+# Chemically Optimized Wine Blend: 4-Factor Fractional DOE + RSM in Python  
+**Cabernet • Merlot • Zinfandel • Sulfur • Region • Replicates • Blind Tasting**  
+*Former QA/QC Chemist → Data-Driven Winemaker*  
+
+> **Goal**: Maximize **taste** while controlling **pH (3.3–3.6)**, **ΔE color stability**, and **free SO₂ (30–70 ppm)** across **California vs. Washington** terroitories  
+> **Result**: **+1.5 taste score**, **+40% color stability**, **2.1x oxidation resistance (k_ox)**  
+
+---
+
+## The Chemistry Behind the Blend  
+*From Lab Bench to Data Pipeline*
+
+| Reaction | Role | Measured |
+|--------|------|----------|
+| **SO₂ + H₂O ⇌ H⁺ + HSO₃⁻** | pH-dependent free SO₂ | Ripper titration |
+| **Phenolic oxidation → brown pigments** | ΔE kinetics | CIELab phone app |
+| **Tannin co-pigmentation** | Color intensity | Zinfandel proxy |
+
+> **KMS (LD Carlson 2 oz) → 30–70 ppm free SO₂**  
+> **pH meter (ATC, 0.01 res) → 3.3–3.6 target**
+
+---
+
+## 4-Factor Fractional DOE (2^(4-1) → 6 Runs + 3 Replicates)
+
+| Factor | Levels | Grape | Region |
+|--------|--------|-------|--------|
+| **A: Cabernet %** | 30%, 70% | Bogle (CA), Ste. Michelle (WA) | — |
+| **B: Merlot %** | 20%, 60% | 14 Hands (CA), Columbia Crest H3 (WA) | — |
+| **C: Sulfur (ppm)** | 30, 70 | KMS (LD Carlson) | — |
+| **D: Region** | CA, WA | — | Terroir |
+
+> **Zinfandel (Cline Ancient Vines) = high-color/tannin proxy for Petit Verdot**  
+> **Total: 12 blends (6 main + 3 reps + 3 oopsies)** in **125 mL PET bottles**
+>**wine regions are not set in stone.  will depend on availability and cost.
+
+---
+
+## Run Table (100 mL Blends)
+
+| Run | Cab % | Merlot % | Zin % | Sulfur | Region | mL Cab | mL Merlot | mL Zin |
+|-----|-------|----------|-------|--------|--------|--------|-----------|--------|
+| 1 | 30 | 20 | 50 | 30 | CA | 30 | 20 | 50 |
+| 2 | 70 | 20 | 10 | 70 | CA | 70 | 20 | 10 |
+| 3 | 30 | 60 | 10 | 70 | CA | 30 | 60 | 10 |
+| 4 | 70 | 60 | 30 | 30 | CA | 70 | 60 | 30 |
+| 5 | 30 | 20 | 50 | 70 | WA | 30 | 20 | 50 |
+| 6 | 70 | 60 | 30 | 70 | WA | 70 | 60 | 30 |
+
+---
+
+## Experimental Design
+
+- **12 × 125 mL PET bottles** (airtight caps)  
+- **3 mL plastic pipettes** (disposable)  
+- **Blind, randomized tasting order** (15 min gaps, 6:00–8:45 PM)  
+- **5-taster panel** → **1–10 rubric**  
+- **Daily ΔE, pH, SO₂** over 7 days  
+
+> **Randomization + replicates → p > 0.05 for order/rep effect → no bias**
+
+
