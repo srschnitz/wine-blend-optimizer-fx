@@ -1,0 +1,31 @@
+# randomization.py 
+import pandas as pd
+import random
+#My 12 bottles
+bottles = [
+    ('Run1', 'Main'), ('Run1', 'Rep1'), ('Run1', 'Rep2'),
+    ('Run2', 'Main'), ('Run2', 'Rep1'),
+    ('Run3', 'Main'), ('Run3', 'Rep1'),
+    ('Run4', 'Main'), ('Run4', 'Rep1'),
+    ('Run5', 'Main'), ('Run5', 'Rep1'),
+    ('Run6', 'Main'), ('Run6', 'Rep1')
+]
+
+# Randomize order
+random.shuffle(bottles)
+
+#tasting order + time slot
+schedule = []
+start_time = 18.00  # 6 PM
+for i, (run, rep) in enumerate(bottles, 1):
+    time = round(start_time + i * 0.25, 2)  # 15 min gaps
+    schedule.append({
+        'Tasting_Order': i,
+        'Run': run,
+        'Rep': rep,
+        'Time': f"{int(time)}:{int((time % 1)*60):02d}",
+        'Bottle_Label': f"{run}-{rep}"
+    })
+
+df = pd.DataFrame(schedule)
+print(df[['Tasting_Order', 'Bottle_Label', 'Time']])
