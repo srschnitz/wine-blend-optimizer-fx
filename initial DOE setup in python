@@ -2,9 +2,9 @@
 import pandas as pd
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
-from scipy.stats import f_oneway  # Fallback for simple one-way
+from scipy.stats import f_oneway  # Maybe Fallback for simple one-way
 
-# Sample data: Taste scores for Run 1 replicates (replace with yours)
+# Sample data: Taste scores for Run 1 replicates (will replace with mine soon enough)
 data = {
     'Taste_Score': [6.8, 7.1, 6.5],  # Rep1, Rep2, Rep3
     'Replicate': ['Rep1', 'Rep2', 'Rep3']
