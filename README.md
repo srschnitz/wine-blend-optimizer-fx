@@ -1,9 +1,9 @@
 ## From Drift to Pour: A Chemist’s Return with data skills in hand. 
 
-Last year, I couldn’t answer simple chemistry question(s) asked of me.  Yikes.  (In mine defense, my mine was on not the best news I had just received, but...., no excuses.)  
+Last year, I couldn’t answer simple chemistry question(s) asked of me.  Yikes.  (In "mind" defense, my mind was somewhere else and with worrisome news I had just received, but...., no excuses.)  
 
 This year, I’m **measuring it**, **modeling it**, and **drinking it**.
-> The next questoin that I could answer was "“What’s your favorite DOE?" -**The one that gives me the answer or direction I am looking for.**  
+> The next questoin that I definetly could answer was "“What’s your favorite DOE?" -**The one that gives me the answer or direction I am looking for.**   Corny or predictable, but correct.  The type of DOE you chose has so many aspects that need to be taken in account that it is not always a "plug and play" as some like to think.  Although, I am working on something that might help simplify choosing a experiment.  (More to come very very soon!) 
 
 1. Project Purpose / Motivation
 This project explores how design of experiments (DOE) can optimize wine blends for taste, chemistry, and storytelling. It’s a personal return to chemistry through data—equal parts redemption and fermentation.
